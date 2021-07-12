@@ -21,7 +21,9 @@ We strive to practice Test driven development. This means at every stage of appl
 this problem must always be trying to fix a test, regardless of how redundant it may seem in the moment.
 
 ## Pairing
-Unlike many software engineering interviews, the potential partner is not expected 
+Unlike many software engineering interviews, the potential partner is not expected to just know everything. In this problem
+solving exercise, you can lean on your interviewers for suggestions, and they may suggest good ideas, or bad ones.
+It is on the potential partner to work around this, by either agreeing, or suggestion an alternative.
 
 
 
