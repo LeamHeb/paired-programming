@@ -1,7 +1,7 @@
 # Paired Programming interview foundation
 
 This challenge is technically simple. What we really want to evaluate here is a potential partner's **current** 
-abilities in the layout of the solution, ability in the following areas : 
+abilities in the following areas : 
 
  - Java Knowledge
  - Solution layout - Well defined controllers, services, etc.
