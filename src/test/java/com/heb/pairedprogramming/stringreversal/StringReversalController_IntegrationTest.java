@@ -11,8 +11,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import static org.hamcrest.Matchers.is;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
@@ -36,7 +38,13 @@ class StringReversalController_IntegrationTest {
 
     @Test
     public void createPrice() throws Exception {
-        mvc.perform(get("/api/v1/string/reverse"))
-                .andExpect(status().isOk());
+        mvc.perform(get("/api/v1/string/reverse/racecar"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.reversedValue", is("racecar")));
+    }
+
+    @Test
+    public void HEBinput() throws Exception {
+        mvc.perform(get("/api/v1/string/reverse/racEcar"))
+                .andExpect(status().isBadRequest());
     }
 }
