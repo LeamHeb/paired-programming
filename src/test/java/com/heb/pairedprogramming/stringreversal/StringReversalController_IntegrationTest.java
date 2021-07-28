@@ -36,8 +36,14 @@ class StringReversalController_IntegrationTest {
     // .andExpect(jsonPath("$.fieldName", is("ExpectedFalue")))
 
     @Test
-    public void createPrice() throws Exception {
-        mvc.perform(get("/api/v1/string/reverse"))
+    public void checkStatusIsOkay() throws Exception {
+        mvc.perform(get("/api/v1/string/reverse/acd"))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    void checkErrorStatusIs400() throws Exception {
+        mvc.perform(get("/api/v1/string/reverse/HEB"))
+                .andExpect(status().isBadRequest());
     }
 }
